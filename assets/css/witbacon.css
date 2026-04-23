@@ -659,8 +659,8 @@ a:hover {
 
 .zh-page .contact-card-zh .contact-note {
   margin-top: 24px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(var(--wb-blue-rgb), 0.12);
+  background: rgba(var(--wb-blue-rgb), 0.1);
+  border: 1px solid rgba(var(--wb-blue-rgb), 0.08);
   font-size: 15px;
   line-height: 1.92;
 }
