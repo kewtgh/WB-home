@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="132" viewBox="0 0 420 132" role="img" aria-labelledby="title">
+  <title>Witbacon Logo</title>
+  <g fill="none" stroke="#1468BF" stroke-linecap="round" stroke-linejoin="round" stroke-width="12">
+    <path d="M18 16 L44 94 L71 16 L98 94 L125 16" />
+    <path d="M164 16 V94" />
+    <rect x="164" y="16" width="118" height="39" rx="19.5" ry="19.5" />
+    <rect x="164" y="55" width="132" height="39" rx="19.5" ry="19.5" />
+  </g>
+  <text x="18" y="125" fill="#A4A8AE" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="300" letter-spacing="5">WITBACON</text>
+</svg>
