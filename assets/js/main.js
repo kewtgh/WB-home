@@ -90,4 +90,23 @@
     e.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, 700);
   });
+
+  function toggleCaseCard($card) {
+    var isFlipped = $card.toggleClass("is-flipped").hasClass("is-flipped");
+    $card.attr("aria-pressed", isFlipped ? "true" : "false");
+  }
+
+  $(document).on("click", ".case-card-flip", function (e) {
+    if ($(e.target).closest("a, button").length) {
+      return;
+    }
+    toggleCaseCard($(this));
+  });
+
+  $(document).on("keydown", ".case-card-flip", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleCaseCard($(this));
+    }
+  });
 })(jQuery);

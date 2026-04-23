@@ -271,10 +271,6 @@ a:hover {
   padding: 110px 0 72px;
 }
 
-.hero-break-desktop {
-  display: block;
-}
-
 .hero-kicker {
   display: inline-flex;
   align-items: center;
@@ -541,29 +537,41 @@ a:hover {
 }
 
 .zh-page .hero-copy-zh {
-  max-width: 760px;
+  max-width: 720px;
 }
 
 .zh-page .hero-copy-zh h1 {
-  max-width: 11ch;
-  font-size: 58px;
-  line-height: 1.1;
+  max-width: none;
+  font-size: 52px;
+  line-height: 1.12;
   letter-spacing: -0.05em;
 }
 
 .zh-page .hero-copy-zh p {
-  max-width: 660px;
-  font-size: 18px;
-  line-height: 1.9;
+  max-width: 690px;
+  font-size: 17px;
+  line-height: 1.88;
+}
+
+.zh-page .hero-title-stacked span {
+  display: block;
+}
+
+.zh-page .hero-copy-zh-main {
+  max-width: 640px;
 }
 
 .zh-page .hero-copy-zh-main h1 {
-  max-width: 10ch;
+  max-width: 7ch;
+}
+
+.zh-page .hero-copy-zh-recruit {
+  max-width: 700px;
 }
 
 .zh-page .hero-copy-zh-recruit h1,
 .zh-page .hero-copy-zh-org h1 {
-  max-width: 13ch;
+  max-width: 11ch;
 }
 
 .zh-page .about-row-zh {
@@ -579,10 +587,15 @@ a:hover {
 }
 
 .zh-page .about-copy-card h3 {
-  max-width: 9ch;
+  max-width: none;
   margin-bottom: 22px;
-  font-size: 30px;
-  line-height: 1.24;
+  font-size: 28px;
+  line-height: 1.32;
+  letter-spacing: -0.02em;
+}
+
+.zh-page .about-copy-card h3 span {
+  display: block;
 }
 
 .zh-page .about-copy-card > p {
@@ -630,20 +643,26 @@ a:hover {
 }
 
 .zh-page .contact-card-zh .contact-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 40px 38px;
   background: linear-gradient(180deg, #fbfdff 0%, #f2f7fd 100%);
   border-right: 1px solid var(--wb-line);
 }
 
 .zh-page .contact-card-zh .contact-summary p {
-  font-size: 18px;
-  line-height: 1.9;
+  max-width: 430px;
+  font-size: 17px;
+  line-height: 1.88;
 }
 
 .zh-page .contact-card-zh .contact-note {
   margin-top: 24px;
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(var(--wb-blue-rgb), 0.12);
+  font-size: 15px;
+  line-height: 1.92;
 }
 
 .zh-page .contact-card-zh .contact-details {
@@ -751,6 +770,96 @@ a:hover {
 .case-card {
   overflow: hidden;
   padding: 0;
+}
+
+.zh-page .case-card-flip {
+  position: relative;
+  min-height: 620px;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  perspective: 1400px;
+}
+
+.zh-page .case-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.zh-page .case-card-flip.is-flipped .case-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.zh-page .case-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid var(--wb-line);
+  border-radius: 24px;
+  background: var(--wb-card);
+  box-shadow: 0 20px 48px rgba(13, 34, 64, 0.06);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.zh-page .case-face-back {
+  transform: rotateY(180deg);
+  background:
+    radial-gradient(circle at top right, rgba(var(--wb-blue-rgb), 0.12), transparent 36%),
+    linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+}
+
+.zh-page .case-card-flip .case-body {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 290px);
+}
+
+.zh-page .case-body-back {
+  height: 100%;
+  padding: 30px;
+}
+
+.zh-page .case-detail-list {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zh-page .case-detail-list li {
+  position: relative;
+  margin-bottom: 14px;
+  padding-left: 18px;
+  color: var(--wb-muted);
+  line-height: 1.82;
+}
+
+.zh-page .case-detail-list li::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--wb-blue);
+}
+
+.zh-page .case-flip-hint {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 22px;
+  color: var(--wb-blue);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .case-media {
@@ -953,8 +1062,7 @@ a:hover {
   }
 
   .zh-page .hero-copy-zh h1 {
-    max-width: 12ch;
-    font-size: 50px;
+    font-size: 45px;
   }
 
   .zh-page .about-copy-card h3 {
@@ -1027,19 +1135,48 @@ a:hover {
     line-height: 1.08;
   }
 
-  .hero-break-desktop {
-    display: inline;
-  }
-
   .zh-page .hero-copy-zh h1 {
     max-width: none;
-    font-size: 40px;
+    font-size: 38px;
     line-height: 1.16;
   }
 
   .zh-page .hero-copy-zh p {
     font-size: 16px;
     line-height: 1.85;
+  }
+
+  .zh-page .hero-title-stacked span {
+    display: inline;
+  }
+
+  .zh-page .case-card-flip,
+  .zh-page .case-flip-inner {
+    min-height: auto;
+  }
+
+  .zh-page .case-face,
+  .zh-page .case-face-back {
+    position: relative;
+    inset: auto;
+    transform: none;
+  }
+
+  .zh-page .case-face-back {
+    display: none;
+    margin-top: 18px;
+  }
+
+  .zh-page .case-card-flip.is-flipped .case-flip-inner {
+    transform: none;
+  }
+
+  .zh-page .case-card-flip.is-flipped .case-face-front {
+    display: none;
+  }
+
+  .zh-page .case-card-flip.is-flipped .case-face-back {
+    display: block;
   }
 
   .hero-copy p {
