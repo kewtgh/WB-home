@@ -1,7 +1,9 @@
 :root {
-  --wb-blue: #1468bf;
-  --wb-blue-deep: #0d2240;
-  --wb-gray: #9fa4ab;
+  --wb-blue: #176db4;
+  --wb-blue-rgb: 23, 109, 180;
+  --wb-blue-deep: #102741;
+  --wb-blue-strong: #11568e;
+  --wb-gray: #a9a8aa;
   --wb-line: rgba(13, 34, 64, 0.1);
   --wb-card: #ffffff;
   --wb-muted: #5f6f82;
@@ -32,7 +34,7 @@ a {
 }
 
 a:hover {
-  color: #0b4a83;
+  color: var(--wb-blue-strong);
   text-decoration: none;
 }
 
@@ -59,12 +61,13 @@ a:hover {
 }
 
 .logo img {
-  height: 56px;
+  height: 42px;
   width: auto;
   padding: 0;
   margin: 0;
   max-height: none;
   object-fit: contain;
+  display: block;
 }
 
 .nav-menu,
@@ -209,7 +212,7 @@ a:hover {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(13, 34, 64, 0.9) 0%, rgba(13, 34, 64, 0.7) 42%, rgba(13, 34, 64, 0.32) 100%),
-    linear-gradient(180deg, rgba(20, 104, 191, 0.12) 0%, rgba(20, 104, 191, 0) 100%);
+    linear-gradient(180deg, rgba(var(--wb-blue-rgb), 0.14) 0%, rgba(var(--wb-blue-rgb), 0) 100%);
   z-index: 1;
 }
 
@@ -292,8 +295,8 @@ a:hover {
 }
 
 .hero-btn.primary:hover {
-  background: #0b4a83;
-  border-color: #0b4a83;
+  background: var(--wb-blue-strong);
+  border-color: var(--wb-blue-strong);
 }
 
 .hero-stats {
@@ -508,7 +511,7 @@ a:hover {
   width: 58px;
   height: 58px;
   border-radius: 18px;
-  background: #eef5fd;
+  background: rgba(var(--wb-blue-rgb), 0.12);
   color: var(--wb-blue);
   font-size: 24px;
 }
@@ -532,7 +535,7 @@ a:hover {
 .step-no {
   padding: 7px 12px;
   border-radius: 999px;
-  background: rgba(15, 94, 168, 0.1);
+  background: rgba(var(--wb-blue-rgb), 0.12);
   color: var(--wb-blue);
   font-size: 12px;
   font-weight: 700;
@@ -600,7 +603,7 @@ a:hover {
   margin-bottom: 14px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: #eef5fd;
+  background: rgba(var(--wb-blue-rgb), 0.12);
   color: var(--wb-blue);
   font-size: 12px;
   font-weight: 700;
@@ -685,15 +688,15 @@ a:hover {
 }
 
 .contact-btn.primary:hover {
-  background: #0b4a83;
-  border-color: #0b4a83;
+  background: var(--wb-blue-strong);
+  border-color: var(--wb-blue-strong);
 }
 
 .contact-note {
   margin-top: 22px;
   padding: 18px 20px;
   border-radius: 18px;
-  background: #eef5fd;
+  background: rgba(var(--wb-blue-rgb), 0.1);
   color: var(--wb-muted);
   line-height: 1.9;
 }
@@ -711,7 +714,7 @@ a:hover {
 }
 
 .footer-brand img {
-  height: 42px;
+  height: 46px;
   width: auto;
 }
 
@@ -746,7 +749,7 @@ a:hover {
 }
 
 .back-to-top:hover {
-  background: #0b4a83;
+  background: var(--wb-blue-strong);
 }
 
 @media (max-width: 991px) {
@@ -799,7 +802,7 @@ a:hover {
   }
 
   .logo img {
-    height: 44px;
+    height: 36px;
   }
 
   #hero,
