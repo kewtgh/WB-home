@@ -537,13 +537,13 @@ a:hover {
 }
 
 .zh-page .hero-copy-zh {
-  max-width: 720px;
+  max-width: 900px;
 }
 
 .zh-page .hero-copy-zh h1 {
   max-width: none;
-  font-size: 48px;
-  line-height: 1.16;
+  font-size: 42px;
+  line-height: 1.18;
   letter-spacing: -0.05em;
 }
 
@@ -553,21 +553,20 @@ a:hover {
   line-height: 1.88;
 }
 
-.zh-page .hero-title-stacked span {
-  display: block;
+.zh-page .hero-title-stacked {
   white-space: nowrap;
 }
 
 .zh-page .hero-copy-zh-main {
-  max-width: 760px;
+  max-width: 900px;
 }
 
 .zh-page .hero-copy-zh-recruit {
-  max-width: 780px;
+  max-width: 900px;
 }
 
 .zh-page .hero-copy-zh-org {
-  max-width: 780px;
+  max-width: 900px;
 }
 
 .zh-page .about-row-zh {
@@ -1077,7 +1076,7 @@ a:hover {
   }
 
   .zh-page .hero-copy-zh h1 {
-    font-size: 45px;
+    font-size: 40px;
   }
 
   .zh-page .about-copy-card h3 {
@@ -1157,7 +1156,7 @@ a:hover {
 
   .zh-page .hero-copy-zh h1 {
     max-width: none;
-    font-size: 38px;
+    font-size: 34px;
     line-height: 1.16;
   }
 
@@ -1166,8 +1165,7 @@ a:hover {
     line-height: 1.85;
   }
 
-  .zh-page .hero-title-stacked span {
-    display: inline;
+  .zh-page .hero-title-stacked {
     white-space: normal;
   }
 

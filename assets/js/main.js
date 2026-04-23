@@ -113,6 +113,8 @@
     $(".mobile-nav, .mobile-nav-toggle").hide();
   }
 
+  syncLanguageLinks();
+
   $backToTop.on("click", function (e) {
     e.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, 700);
@@ -137,7 +139,16 @@
     }
   });
 
-  $(document).on("click", ".lang-link a", function () {
-    syncLanguageLinks();
+  $(document).on("click", ".lang-link a", function (e) {
+    e.preventDefault();
+    var baseHref = ($(this).attr("href") || "").split("#")[0];
+    if (!baseHref) {
+      return;
+    }
+    var targetHref = baseHref + "#" + getCurrentSectionId();
+    if ($("body").hasClass("mobile-nav-active")) {
+      closeMobileNav();
+    }
+    window.location.href = targetHref;
   });
 })(jQuery);
