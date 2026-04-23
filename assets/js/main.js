@@ -38,7 +38,7 @@
   function syncLanguageLinks() {
     var targetId = "#" + getCurrentSectionId();
 
-    $(".lang-link a").each(function () {
+    $(".lang-switch").each(function () {
       var baseHref = ($(this).attr("href") || "").split("#")[0];
       if (baseHref) {
         $(this).attr("href", baseHref + targetId);
@@ -89,6 +89,7 @@
 
   if ($(".nav-menu").length) {
     var $mobileNav = $(".nav-menu").clone().prop({ class: "mobile-nav d-lg-none" });
+    $mobileNav.find(".lang-link").remove();
     $("body").append($mobileNav);
     $("body").prepend(
       '<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>'
@@ -139,7 +140,7 @@
     }
   });
 
-  $(document).on("click", ".lang-link a", function (e) {
+  $(document).on("click", ".lang-switch", function (e) {
     e.preventDefault();
     var baseHref = ($(this).attr("href") || "").split("#")[0];
     if (!baseHref) {

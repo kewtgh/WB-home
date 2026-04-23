@@ -153,6 +153,32 @@ a:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
+.mobile-lang-switch {
+  position: fixed;
+  top: 15px;
+  right: 64px;
+  z-index: 9998;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  background: rgba(13, 34, 64, 0.22);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(8px);
+}
+
+.mobile-lang-switch:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .mobile-nav-toggle {
   position: fixed;
   right: 15px;
@@ -1066,6 +1092,7 @@ a:hover {
 @media (max-width: 991px) {
   #header .container {
     gap: 16px;
+    padding-right: 124px;
   }
 
   #hero,
@@ -1138,12 +1165,24 @@ a:hover {
     padding: 14px 0;
   }
 
+  #header .container {
+    padding-right: 116px;
+  }
+
   .logo img {
     height: 30px;
   }
 
   .logo a {
     padding: 7px 14px 7px 12px;
+  }
+
+  .mobile-lang-switch {
+    top: 14px;
+    right: 60px;
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 12px;
   }
 
   #hero,
@@ -1255,6 +1294,10 @@ a:hover {
 
   .case-card {
     padding: 0;
+  }
+
+  .about-gallery-wrap {
+    display: none;
   }
 
   .about-gallery {
