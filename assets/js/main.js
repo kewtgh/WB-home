@@ -21,8 +21,37 @@
     $(".mobile-nav-overly").fadeOut();
   }
 
+  function getCurrentSectionId() {
+    var headerOffset = $header.length ? $header.outerHeight() + 24 : 24;
+    var currentId = "hero";
+
+    $("section[id], main section[id]").each(function () {
+      var $section = $(this);
+      if ($window.scrollTop() >= $section.offset().top - headerOffset) {
+        currentId = $section.attr("id");
+      }
+    });
+
+    return currentId;
+  }
+
+  function syncLanguageLinks() {
+    var targetId = window.location.hash && $(window.location.hash).length
+      ? window.location.hash
+      : "#" + getCurrentSectionId();
+
+    $(".lang-link a").each(function () {
+      var baseHref = ($(this).attr("href") || "").split("#")[0];
+      if (baseHref) {
+        $(this).attr("href", baseHref + targetId);
+      }
+    });
+  }
+
   $window.on("scroll", syncHeaderState);
   syncHeaderState();
+  syncLanguageLinks();
+  $window.on("scroll hashchange", syncLanguageLinks);
 
   $(document).on("click", ".nav-menu a, .mobile-nav a, .scrollto", function (e) {
     if (
@@ -108,5 +137,9 @@
       e.preventDefault();
       toggleCaseCard($(this));
     }
+  });
+
+  $(document).on("click", ".lang-link a", function () {
+    syncLanguageLinks();
   });
 })(jQuery);
