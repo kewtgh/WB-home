@@ -36,9 +36,7 @@
   }
 
   function syncLanguageLinks() {
-    var targetId = window.location.hash && $(window.location.hash).length
-      ? window.location.hash
-      : "#" + getCurrentSectionId();
+    var targetId = "#" + getCurrentSectionId();
 
     $(".lang-link a").each(function () {
       var baseHref = ($(this).attr("href") || "").split("#")[0];

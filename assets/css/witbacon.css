@@ -542,8 +542,8 @@ a:hover {
 
 .zh-page .hero-copy-zh h1 {
   max-width: none;
-  font-size: 52px;
-  line-height: 1.12;
+  font-size: 48px;
+  line-height: 1.16;
   letter-spacing: -0.05em;
 }
 
@@ -555,23 +555,19 @@ a:hover {
 
 .zh-page .hero-title-stacked span {
   display: block;
+  white-space: nowrap;
 }
 
 .zh-page .hero-copy-zh-main {
-  max-width: 640px;
-}
-
-.zh-page .hero-copy-zh-main h1 {
-  max-width: 7ch;
+  max-width: 760px;
 }
 
 .zh-page .hero-copy-zh-recruit {
-  max-width: 700px;
+  max-width: 780px;
 }
 
-.zh-page .hero-copy-zh-recruit h1,
-.zh-page .hero-copy-zh-org h1 {
-  max-width: 11ch;
+.zh-page .hero-copy-zh-org {
+  max-width: 780px;
 }
 
 .zh-page .about-row-zh {
@@ -1172,6 +1168,7 @@ a:hover {
 
   .zh-page .hero-title-stacked span {
     display: inline;
+    white-space: normal;
   }
 
   .zh-page .case-card-flip,
