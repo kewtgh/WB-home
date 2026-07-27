@@ -8,6 +8,10 @@
   --wb-card: #ffffff;
   --wb-muted: #5f6f82;
   --wb-soft: #f3f7fb;
+  --wb-font-sans-en: "Segoe UI Variable Text", "Segoe UI Variable", "Aptos", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --wb-font-display-en: "Segoe UI Variable Display", "Segoe UI Variable", "Aptos Display", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --wb-font-sans-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --wb-font-display-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 }
 
 html {
@@ -18,7 +22,15 @@ html {
 body {
   color: #243447;
   background: #fff;
-  font-family: "Segoe UI", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: var(--wb-font-sans-en);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
@@ -28,15 +40,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: inherit;
+  font-family: var(--wb-font-display-en);
+  font-kerning: normal;
 }
 
 .zh-page {
-  font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+  font-family: var(--wb-font-sans-zh);
+  letter-spacing: 0.01em;
 }
 
 [hidden] {
   display: none !important;
+}
+
+.keep-together {
+  white-space: nowrap;
 }
 
 section[id] {
@@ -188,9 +206,9 @@ a:hover {
   justify-content: center;
   color: rgba(255, 255, 255, 0.88);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 650;
   line-height: 1;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.015em;
   padding: 10px 14px;
   min-height: 42px;
 }
@@ -417,9 +435,9 @@ a:hover {
   margin: 0 0 18px;
   color: #fff;
   font-size: 64px;
-  font-weight: 500;
-  line-height: 1.04;
-  letter-spacing: -0.04em;
+  font-weight: 650;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
 }
 
 .hero-copy p {
@@ -607,9 +625,9 @@ a:hover {
   margin-bottom: 14px;
   color: var(--wb-blue-deep);
   font-size: 42px;
-  font-weight: 600;
+  font-weight: 650;
   line-height: 1.16;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
 }
 
 .section-intro p {
@@ -730,9 +748,10 @@ a:hover {
 
 .zh-page .hero-copy-zh .hero-title {
   max-width: none;
-  font-size: 42px;
-  line-height: 1.18;
-  letter-spacing: -0.05em;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: 0.01em;
 }
 
 .zh-page .hero-copy-zh p {
@@ -786,8 +805,8 @@ a:hover {
   max-width: none;
   margin-bottom: 22px;
   font-size: 28px;
-  line-height: 1.32;
-  letter-spacing: -0.02em;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
 }
 
 .zh-page .about-copy-card h3 span {
@@ -1540,6 +1559,88 @@ a:hover {
   margin-top: 32px;
 }
 
+/* Bilingual typography system */
+.zh-page h1,
+.zh-page h2,
+.zh-page h3,
+.zh-page h4,
+.zh-page h5,
+.zh-page h6 {
+  font-family: var(--wb-font-display-zh);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.zh-page .nav-menu a,
+.zh-page .mobile-nav a,
+.zh-page .mobile-lang-switch,
+.zh-page .legal-nav a {
+  font-weight: 600;
+  letter-spacing: 0.015em;
+}
+
+.zh-page .hero-kicker,
+.zh-page .stat-card span,
+.zh-page .step-no,
+.zh-page .case-tag,
+.zh-page .legal-kicker {
+  letter-spacing: 0.08em;
+}
+
+.zh-page .section-intro h2,
+.zh-page .content-card h3,
+.zh-page .contact-card h3,
+.zh-page .service-card h3,
+.zh-page .step-card h3,
+.zh-page .case-card h3,
+.zh-page .client-card h3,
+.zh-page .inquiry-intro h3,
+.zh-page .legal-card h1 {
+  letter-spacing: 0.01em;
+}
+
+.zh-page .section-intro h2 {
+  line-height: 1.38;
+}
+
+.zh-page .content-card h3,
+.zh-page .contact-card h3,
+.zh-page .inquiry-intro h3 {
+  line-height: 1.4;
+}
+
+.zh-page .service-card h3,
+.zh-page .step-card h3,
+.zh-page .case-card h3,
+.zh-page .client-card h3 {
+  line-height: 1.45;
+}
+
+.zh-page .hero-copy p,
+.zh-page .section-intro p,
+.zh-page .content-card p,
+.zh-page .contact-card p,
+.zh-page .service-card p,
+.zh-page .step-card p,
+.zh-page .case-card p,
+.zh-page .client-card p,
+.zh-page .contact-line div,
+.zh-page .contact-note,
+.zh-page .inquiry-intro p,
+.zh-page .legal-lead,
+.zh-page .legal-card section p {
+  line-height: 1.9;
+}
+
+.zh-page .hero-btn,
+.zh-page .contact-btn,
+.zh-page .case-toggle,
+.zh-page .inquiry-form label > span,
+.zh-page .consent-banner a {
+  font-weight: 650;
+  letter-spacing: 0.015em;
+}
+
 @media (max-width: 991px) {
   #header .container {
     gap: 16px;
@@ -1673,7 +1774,7 @@ a:hover {
   .zh-page .hero-copy-zh .hero-title {
     max-width: none;
     font-size: 34px;
-    line-height: 1.16;
+    line-height: 1.3;
   }
 
   .zh-page .hero-copy-zh p {
