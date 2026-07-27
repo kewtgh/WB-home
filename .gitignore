@@ -1,0 +1,4 @@
+.audit-temp/
+*.optimized.png
+*.optimized.jpg
+*.optimized.webp

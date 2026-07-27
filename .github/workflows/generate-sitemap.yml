@@ -17,10 +17,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Generate sitemap
         shell: pwsh
         run: ./scripts/generate-sitemap.ps1
+
+      - name: Validate site
+        shell: pwsh
+        run: ./scripts/validate-site.ps1
 
       - name: Commit sitemap changes
         run: |
